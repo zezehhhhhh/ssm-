@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baidu.dao.StudentMapper">
+    <resultMap id="baseMap" type="com.baidu.pojo.Student">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="password" column="password"/>
+        <result property="sexy" column="sexy"/>
+        <result property="major" column="major"/>
+        <result property="grade" column="grade"/>
+        <result property="type" column="type"/>
+    </resultMap>
+<!--    <resultMap id="userMap" type="com.baidu.pojo.Student" extends="baseMap">-->
+<!--        <association property="myDept" javaType="com.baidu.pojo.Course">-->
+<!--            <result property="id" column="rid"></result>-->
+<!--            <result property="deptName" column="deptName"></result>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+    <select id="login" parameterType="com.baidu.pojo.Student" resultMap="baseMap">
+        select * from student where name=#{name}  AND password=#{password}
+    </select>
+    <select id="getAllStudent" resultMap="baseMap">
+        select Student.*
+        from Student
+    </select>
+    <select id="getAllStudentByType" resultMap="baseMap">
+        select Student.*
+        from Student
+        where Student.type=#{type}
+    </select>
+    <insert id="addStudent" parameterType="Student">
+        INSERT INTO Student(id,name,password,sexy,major,grade,type) VALUES (#{id},#{name},#{password},#{sexy},#{major},#{grade},#{type})
+    </insert>
+    <update id="updateStudent" parameterType="Student">
+        update Student set id=#{student.id},name=#{student.name},password=#{student.password},sexy=#{student.sexy},major=#{student.major},grade=#{student.grade},type=#{student.type}
+        where id = #{oid}
+    </update>
+    <update id="updateStudentWechat" parameterType="Student">
+    update Student set id=#{id},name=#{name},password=#{password},sexy=#{sexy},major=#{major},grade=#{grade},type=#{type}
+    where id = #{id}
+</update>
+    <delete id="delStudent">
+        delete from Student
+        where id=#{id}
+    </delete>
+    <select id="getStudentById" parameterType="int" resultMap="baseMap">
+        select Student.*
+        from Student
+        where Student.id = #{id}
+    </select>
+    <select id="getStudentByName" parameterType="String" resultMap="baseMap">
+        select *
+        from Student
+        where name = #{name}
+    </select>
+</mapper>

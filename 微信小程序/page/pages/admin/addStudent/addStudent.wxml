@@ -1,0 +1,50 @@
+<!--pages/admin/addStudent/addStudent.wxml-->
+<view class='container'>
+<view class='info'>
+    <label class='info-text'>学号</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生学号' bindinput='input_id'></input>
+    </view>
+  </view>
+  <view class='info'>
+    <label class='info-text'>姓名</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生姓名' bindinput='input_name'></input>
+    </view>
+  </view>
+  
+  <view class='info'>
+    <label class='info-text'>性别</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生性别' bindinput='input_sexy'></input>
+    </view>
+  </view>
+  
+  <view class='info'>
+    <label class='info-text'>专业</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生专业' bindinput='input_major'></input>
+    </view>
+  </view>
+  <view class='info'>
+    <label class='info-text'>年级</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生年级' bindinput='input_grade'></input>
+    </view>
+  </view>
+  
+  <view class='info'>
+    <label class='info-text'>类型</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生类型' bindinput='input_type'></input>
+    </view>
+  </view>
+  
+  <view class='info'>
+    <label class='info-text'>密码</label>
+    <view class='info-box'>
+      <input class='info-input' placeholder='请输入学生密码' bindinput='input_password'></input>
+    </view>
+  </view>
+  <button class='submit' bindtap='submit'>提交</button>
+</view>

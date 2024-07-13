@@ -1,0 +1,76 @@
+/**index.wxss**/
+
+.header {
+  margin-top: -40px;
+  margin-bottom: 40px;
+  font-size:40px;
+}
+
+.section1 {
+  width: 400rpx;
+  padding: 50rpx 0;
+  margin-top: -160px;
+}
+.section2 {
+  width: 400rpx;
+  padding: 50rpx 0;
+  margin-top: -150px;
+}
+
+.section1 text {
+  font-size: 25px;
+  font-family:‘Courier New’, Courier, monospace;
+}
+.section2 text {
+  font-size: 25px;
+  font-family:‘Courier New’, Courier, monospace;
+}
+
+input {
+  margin-top: 16rpx;
+  border: 1px solid #000;
+  padding-left: 10rpx;
+  height: 36px;
+  font-size: 32rpx;
+  border-radius: 20px;
+  box-shadow:  10rpx 15rpx rgba(85, 85, 85, 0.10);
+}
+
+.submit {
+  width: 150px;
+  background: #fff;
+  color: #333;
+  font-size: 36rpx;
+}
+
+.container{
+
+  position: absolute;
+
+  top: 0;
+
+  bottom: 0;
+
+  left: 0;
+
+  right: 0;
+
+  background: -webkit-linear-gradient(top,rgb(207, 236, 232),rgb(25, 255, 255),white);
+
+  color: rgb(241, 161, 155);
+
+  font-size: 18px;
+
+}
+
+.container text{
+
+  display: block;
+
+  margin: 40rpx;
+
+}
+
+.wx-input {
+  margin-top: -10px; /* 将输入框上移10像素 */
+}

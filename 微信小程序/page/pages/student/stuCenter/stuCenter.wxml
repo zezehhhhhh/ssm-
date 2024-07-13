@@ -1,0 +1,29 @@
+<!--pages/student/stuCenter/stuCenter.wxml-->
+<view class='content'>
+  <view class='nav'>
+    <view class='top'>
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+  </view>
+  <view class='item1'>
+    <text class='left1'>学号：</text>
+    <text class='right1'>{{user.id}}</text>
+  </view>
+  <view class='item2'>
+    <text class='left2'>姓名：</text>
+    <text class='right2'>{{user.name}}</text>
+  </view>
+  <view class='item3'>
+    <text class='left3'> 年级：</text>
+    <text class='right3'>{{user.grade}}</text>
+  </view>
+  <view class='item4'>
+    <text class='left4'>专业：</text>
+    <text class='right4'>{{user.major}}</text>
+  </view>
+  <view class='item5' bindtap='exit'>
+    <text class='left5'>退出</text>
+    <text class='right5'>>>></text>
+  </view>
+
+</view>

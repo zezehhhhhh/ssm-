@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baidu.dao.CourseMapper">
+    <resultMap id="baseMap" type="com.baidu.pojo.Course">
+        <id property="id" column="id"/>
+        <result property="name" column="name"/>
+        <result property="teacher" column="teacher"/>
+
+        <result property="day" column="day"/>
+        <result property="time" column="time"/>
+    </resultMap>
+<!--    <resultMap id="userMap" type="com.baidu.pojo.Student" extends="baseMap">-->
+<!--        <association property="myDept" javaType="com.baidu.pojo.Course">-->
+<!--            <result property="id" column="rid"></result>-->
+<!--            <result property="deptName" column="deptName"></result>-->
+<!--        </association>-->
+<!--    </resultMap>-->
+    <select id="getAllCourse" resultMap="baseMap">
+        select Course.*
+        from Course
+    </select>
+    <insert id="addCourse" parameterType="Course">
+        INSERT INTO Course(id,name,teacher,day,time) VALUES (#{id},#{name},#{teacher},#{day},#{time})
+    </insert>
+    <update id="updateCourse" parameterType="Course">
+        update Course set id = #{course.id},name=#{course.name},teacher=#{course.teacher}
+        where id = #{oid}
+    </update>
+
+    <update id="updateCourseWechat" parameterType="Course">
+        update Course set id = #{id},name=#{name},teacher=#{teacher},day=#{day},time=#{time}
+        where id = #{id}
+    </update>
+    <delete id="delCourse">
+        delete from Course
+        where id=#{id}
+    </delete>
+    <select id="getCourseById" parameterType="int" resultMap="baseMap">
+        select Course.*
+        from Course
+        where Course.id = #{id}
+    </select>
+    <select id="getCourseByName" parameterType="String" resultMap="baseMap">
+        select *
+        from Course
+        where name = #{name}
+    </select>
+    <select id="check" resultMap="baseMap">
+        select Course.*
+        from Course
+        where Course.id = #{id}
+    </select>
+</mapper>
